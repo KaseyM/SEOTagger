@@ -1,0 +1,4 @@
+SEOTagger
+=========
+
+Joomla SEO Tagger
