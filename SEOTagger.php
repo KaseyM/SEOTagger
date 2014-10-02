@@ -8,11 +8,11 @@
  */
 // no direct access
 defined('_JEXEC') or die('Restricted access');
-
+//Define extension type
 jimport('joomla.plugin.plugin');
-
+// Call Class
 class plgSystemSEOTagger extends JPlugin {
-
+//Begin plugin calls
     function onAfterRender() {
         $app = JFactory::getApplication();
         $locale = $this->params->get('locale');
@@ -55,7 +55,7 @@ class plgSystemSEOTagger extends JPlugin {
 		$description = JFactory::getDocument();
 		$currenturl = JURI::current();
 		$base = JURI::base();
-	
+	// Meta Facebook
 		$code = "
 
 		<meta property='og:locale' content='".$locale."'/>
