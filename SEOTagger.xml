@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system">
+	<name>System - SEO Tagger</name>
+	<author>Kasey Moore</author>
+	<creationDate>14 July. 2013</creationDate>
+	<copyright>Kasey Moore</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>kaseymoore@hotmail.co.uk</authorEmail>
+	<authorUrl>www.seo-suite.co.uk</authorUrl>
+	<version>1.3</version>
+	<description><![CDATA[
+		<style type='text/css'>
+			span.readonly { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; } 
+			span.readonly h1 { clear:both; font-family: Arial; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; } 
+			span.readonly p { margin: 0 26px 10px } 
+			span.readonly p a { color: #CF2020 } 
+			span.readonly p.homepage { margin-top: 30px } 
+			span.readonly p.purchase { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
+			span.tooltip-content { display: none; }
+			.tip-text span.readonly { display: none; }
+			.tip-text span.tooltip-content { display: block; }
+			
+		</style>
+		<span class='readonly'>
+			<h1>SEO Tagger<small>ver. 1.3</small></h1>
+			<p>SEO Tagger is dedicated to specifically improving your Google Ranking and SERP. Period. It generates a ton of great tags which for the most part happen automatically by displaying Twitter Card data, OpenGraph and other cool pieces of code. </p> 
+		
+<p class='purchase'>Thanks for purchasing the SEO-Suite with SEO Tagger. For support click <a href="http://seo-suite.co.uk/support" target="_blank">here.</a> </p>		</span>
+		<span class='tooltip-content'>Advanced content module for Joomla! 3</span>
+	]]></description>
+	<files>
+		<filename plugin="SEOTagger">SEOTagger.php</filename>
+		<filename>SEOTagger.xml</filename>
+		<filename>index.html</filename>
+	</files>
+	
+<config>
+	<fields name="params">
+	<fieldset name="general" label="General">
+		<field name="homeurl" type="text"  label="Homepage URL" description="Web address of your homepage. " ></field>
+		<field name="sitename" type="text"  label="Site Name" description="The name of your website/business. " ></field>
+		<field name="image1" type="media"  label="Site Logo" description="The logo for your site." ></field>
+	</fieldset>
+	 <fieldset name="opengraph" label="OpenGraph - Sitewide">
+		<field name="locale" type="list" default="English (US)" label="Locale" description="Locale for your website. " >
+			<option value="en_GB">English (United Kingdom)</option>
+			<option value="en_US">English (United States)</option>
+			<option value="sq_AL">Albanian</option>
+			<option value="ar">Arabic</option>
+			<option value="zh_CN">Chinese (China)</option>
+			<option value="zh_HK">Chinese (Hong Kong)</option>
+			<option value="zh_SG">Chinese (Singapore)</option>
+			<option value="da_DK">Danish</option>
+			<option value="nl_BE">Dutch (Belgium)</option>
+			<option value="nl_NL">Netherlands</option>
+			<option value="en_AU">English (Australian)</option>
+			<option value="en_CA">English (Canadian)</option>
+			<option value="en_NZ">English (New Zealand)</option>
+			<option value="en_ZA">English (South Africa)</option>
+			<option value="et_EE">Estonian</option>
+			<option value="fi_FI">Finnish (Finland)</option>
+			<option value="fr_FR">French (France)</option>
+			<option value="de_DE">German (Germany)</option>
+			<option value="el_GR">Greek</option>
+			<option value="hi_IN">Hindi (Indian)</option>
+			<option value="is_IS">Icelandic (Iceland)</option>
+			<option value="it_IT">Italian (Italy)</option>
+			<option value="ja_JP">Japanese (Japan)</option>
+			<option value="ko_KR">Korean (South Korea)</option>
+			<option value="pl_PL">Polish (Poland)</option>
+			<option value="ru_RU">Russian (Russia)</option>
+			<option value="es_ES">Spanish (Spain)</option>
+			<option value="sv_SE">Swedish (Sweden)</option>
+		</field>
+		<field name="fbadmin" type="text"  label="FB Admin Code" description="Your FB account admin account number. " ></field>
+		<field name="appid" type="text"  label="FB App ID" description="Your FB account admin account number. " ></field>
+			<field name="publisherurl" type="text"  label="Your Facebook Page URL" description="The full URL address example :  https://www.facebook.com/pages/Whats-on-Netflix/496387740439453" ></field>
+	</fieldset>
+	<fieldset name="opengraphl" label="OpenGraph - Homepage">
+	<field name="locationogyn" type="radio" default="0"  label="Display Location OpenGraph?" description="">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</field>
+		<field name="lattitude" type="text"  label="Business Lattitude" description="The Latitude of the Business"></field>
+		<field name="longitude" type="text"  label="Business Longitude" description="The Longitude of the Business"></field>
+		<field name="streetaddress" type="text"  label="Business Street Address" description="Address of the Business"></field>
+		<field name="locality" type="text"  label="Business Locality" description="Locality of the Business"></field>
+		<field name="region" type="text"  label="Business Region" description="Region of the Business"></field>
+		<field name="postcode" type="text"  label="Post Code" description="Post Code of the Business"></field>
+		<field name="country" type="text"  label="Business Country" description="Country of the Business"></field>
+		<field name="email" type="text"  label="Phone Number" description="Phone Number of the Business"></field>
+		<field name="phone" type="text"  label="Email Address" description="Email Address of the Business"></field>
+	</fieldset>
+
+	 <fieldset name="twitter" label="Twitter">
+	 		<field name="twitteryn" type="radio" default="0"  label="Display Twitter Card Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="sitetwit" type="text"  label="Site Twitter Name" description="Your Twitter name for your business"></field>
+			<field name="authtwit" type="text"  label="Author Twitter Name" description="Your personal twitter account. " ></field>
+	</fieldset>
+	
+	 <fieldset name="analytics" label="Analytics">
+			<field name="analyticsyn" type="radio" default="0"  label="Display Analytics Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="analyticsid" type="text"  label="Analytics ID Code" description="Enter your Google Analytics code"></field>
+	</fieldset>
+	 <fieldset name="Google" label="Google+">
+			<field name="publisheryn" type="radio" default="0"  label="Display Google+ Page Number Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="publisherid" type="text"  label="Google+ Page Number" description="Your Google+ Page Number"></field>
+			<field name="contentryn" type="radio" default="0"  label="Display Google+ Recommendations Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+	</fieldset>
+	<fieldset name="webmaster" label="Verifications">
+			<field name="googleyn" type="radio" default="0"  label="Display Google Webmaster Tools Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="googleid" type="text"  label="Google Webmaster Tools ID Code" description="Enter your Google Webmaster Tools code"></field>
+			<field name="bingyn" type="radio" default="0"  label="Display Bing Webmaster Tools Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="bingid" type="text"  label="Bing Webmaster Tools ID Code" description="Enter your Bing Webmaster Tools code"></field>
+			<field name="yandexyn" type="radio" default="0"  label="Display Yandex Webmaster Tools Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="yandexid" type="text"  label="Yandex Webmaster Tools ID Code" description="Enter your Yandex Webmaster Tools code"></field>
+			<field name="alexa" type="radio" default="0"  label="Display Alexa Verification Code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="alexaid" type="text"  label="Alexa ID" description="Enter your Alexa Verification code"></field>
+	</fieldset>
+	<fieldset name="Other" label="Other SEO Tools">
+			<field name="canonicalyn" type="radio" default="0" label="Display Canonical URL?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="skype" type="radio" default="0" label="Disable Skypes Click to Call?" description="This option enables you to disable the Skype click to call extension which millions of people use. Disabling this means you can have mobile numbers and homephone numbers not available to call through with Skype. ">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+			<field name="robots" type="list" default="Index,Follow" label="Robots" description="Robots for the website.  " >
+			<option value="none">Do Not Display</option>
+			<option value="index, follow">Index, Follow (Recommended)</option>
+			<option value="noindex, follow">No Index, Follow</option>
+			<option value="index, nofollow">Index, No Follow</option>
+			<option value="noindex, nofollow">No Index, No Follow</option>
+			</field>
+			<field name="baseyn" type="radio" default="0" label="Display BASE URL? (ADVANCED USERS ONLY)" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</field>
+	</fieldset>
+	</fields>
+</config>
+</extension>
